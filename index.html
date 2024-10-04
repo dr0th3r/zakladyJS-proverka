@@ -363,17 +363,22 @@
           </div>
           <script>
             const solutionBlock11 = document.getElementById("jedenacty");
-            const yearList = document.createElement("ul");
-            const startYear = 2020;
+            const startYear = 2000;
             const endYear = 2024;
 
-            for (let i = startYear; i < endYear; i++) {
-              const li = document.createElement("li");
-              li.textContent = i;
-              yearList.append(li);
+            function leapYearList(startYear, endYear) {
+              const yearList = document.createElement("ul");
+              
+              for (let i = startYear; i < endYear; i++) {
+                const li = document.createElement("li");
+                li.textContent = i;
+                yearList.append(li);
+              }
+              
+              return yearList;
             }
 
-            solutionBlock11.append(yearList);
+            solutionBlock11.append(leapYearList(startYear, endYear));
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
