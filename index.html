@@ -369,10 +369,12 @@
             function leapYearList(startYear, endYear) {
               const yearList = document.createElement("ul");
               
-              for (let i = startYear; i < endYear; i++) {
-                const li = document.createElement("li");
-                li.textContent = i;
-                yearList.append(li);
+              for (let i = startYear; i <= endYear; i++) {
+                if (i % 400 === 0 || i % 4 === 0 && i % 100 !== 0) {
+                  const li = document.createElement("li");
+                  li.textContent = i;
+                  yearList.append(li);
+                }
               }
               
               return yearList;
